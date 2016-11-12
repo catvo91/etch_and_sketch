@@ -1,6 +1,6 @@
 .grid {
-	height: 25%;
-	width: 25%;
+	height: 5%;
+	width: 5%;
 	background-color: pink;
 	display: inline-block;
 }
@@ -12,10 +12,13 @@
 }
 
 #smallWrapper {
-	height: 75%;
-	width: 75%;
+	height: 500px;
+	width: 500px;
 	background-color: purple;
 	margin: 0;
-	padding-left: 12.5%;
-	padding-top: 6.25%;
+	padding: 0;
+}
+
+.etch {
+	background-color: red;
 }
