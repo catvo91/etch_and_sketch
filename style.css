@@ -15,10 +15,57 @@
 	height: 500px;
 	width: 500px;
 	background-color: purple;
-	margin: 0;
+	margin-left: 462px;
 	padding: 0;
 }
 
 .etch {
 	background-color: red;
+}
+
+#header {
+	width: 100%;
+	height: 100px;
+	background-color: white;
+	min-width: 1300px;
+}
+
+.buttons {
+	height: 35%;
+	width: 10%;
+	background-color: #fbecec;
+	display: inline-block;
+	border-radius: 10%;
+	min-width: 110px;
+	margin: 32.5px 10px;
+	font-family: Arial;
+	text-align: center;
+	line-height: 33px;
+	box-shadow: 0 3px 5px #b9b2b2;
+	color: #9f92a2;
+	border: 1px solid #968b8b;
+}
+
+#clear {
+	height: 35%;
+	width: 10%;
+	background-color: #fbecec;
+	display: inline-block;
+	border-radius: 10%;
+	min-width: 110px;
+	margin: 32.5px 10px;
+	font-family: Arial;
+	text-align: center;
+	line-height: 33px;
+	box-shadow: 0 3px 5px #b9b2b2;
+	color: #9f92a2;
+	border: 1px solid #968b8b;
+}
+
+#norm {
+	margin-left: 280px;
+}
+
+.highlight {
+	background-color: yellow;
 }
