@@ -6,19 +6,48 @@
 	border-radius: 5px;
 }
 
+.grid2 {
+	height: 156.25px;
+	width: 156.25px;
+	background-color: pink;
+	display: inline-block;
+	border-radius: 5px;
+}
+
 #largeWrapper {
 	width: 100%;
 	height: 700px;
+	min-width: 100%;
 }
 
 #smallWrapper {
 	height: 625px;
 	width: 625px;
 	background-color: black;
-	margin-left: 400px;
+	margin-left: 27.5%;
 	padding: 0;
 	border: 1px solid black;
 	box-shadow: 0 3px 5px #b9b2b2;
+	min-width: 625px;
+}
+
+#instructions {
+	float: left;
+	height: 50%;
+	width: 22%;
+	margin-left: 2.5%;
+}
+
+h1 {
+	font-family: cursive;
+	color: #ded6d6;
+	text-shadow: 1px 1px 1px #7b7373;
+}
+
+p {
+	font-family: calibri;
+	color: #0e0e0e;
+	text-shadow: 1px 1px 1px #7b7373;
 }
 
 .etch {
@@ -34,7 +63,7 @@
 
 .buttons {
 	height: 35%;
-	width: 10%;
+	width: 7.5%;
 	background-color: #fbecec;
 	display: inline-block;
 	border-radius: 10%;
@@ -48,10 +77,25 @@
 	border: 2px solid #968b8b;
 }
 
+.buttons2 {
+	height: 35%;
+	width: 7.5%;
+	background-color: #d28b8b;
+	display: inline-block;
+	border-radius: 10%;
+	min-width: 110px;
+	margin: 32.5px 10px;
+	font-family: Arial;
+	text-align: center;
+	line-height: 33px;
+	box-shadow: 0 3px 5px #b9b2b2;
+	color: #e6e5e6;
+	border: 2px solid #927d7d;
+}
 
 #clear {
 	height: 35%;
-	width: 10%;
+	width: 7.5%;
 	background-color: #fbecec;
 	display: inline-block;
 	border-radius: 10%;
@@ -65,11 +109,42 @@
 	border: 2px solid #968b8b;
 }
 
-#norm {
-	margin-left: 205px;
+#size {
+	margin-left: 12%;
 }
 
 .highlight {
-	background-color: #f1d0bf;
+	background-color: #ffffff;
 	box-shadow: 0 5px 10px #825555;
+}
+
+.dropdown {
+	display: none;
+	/* background-color: yellow; */
+	position: absolute;
+	width: 115px;
+	height: 150px;
+}
+.dropdown > a {
+	width: 109px;
+	background-color: #e9daea;
+	display: block;
+	border-radius: 10%;
+	min-width: 110px;
+	font-family: Arial;
+	text-align: center;
+	line-height: 33px;
+	box-shadow: 0 3px 5px #b9b2b2;
+	color: #9f92a2;
+	border: 1px solid #968b8b;
+	text-decoration: none;
+	opacity: 1;
+}
+
+#size:hover .dropdown {
+	display: block;
+}
+
+#color:hover .dropdown {
+	display: block;
 }
