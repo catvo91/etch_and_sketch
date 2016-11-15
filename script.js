@@ -1,69 +1,10 @@
 $(document).ready(function(){
 	var i = 1;
-	var j = 1;
 	var setting = 1;
 	var rainbow = ["#dc8c8c", "#918cdc", "#3bb980", "#e6db3b", "#e6ab3b", "#ea9be7"];
-	var size = 3;
 	var hue = 1;
-	while (i <= 625) {
-		$('#smallWrapper').append("<div class = 'grid'> </div>");
-		i++;
-	}
-	$('.buttons').click(function(){
-		if ($(this).hasClass('highlight')) {
-    		$(this).removeClass('highlight');
-    	} 
-    	else {
-    		$('.highlight').removeClass('highlight');
-	    	$(this).addClass('highlight');
-		}
-	})
-	$('#norm').click(function(){
-		if (setting === 1) {
-			setting = 0;
-		} else {
-			setting = 1;
-		}
-		console.log(setting);
-	})
-		$('#fade').click(function(){
-		if (setting === 2) {
-			setting = 0;
-		} else {
-			setting = 2;
-		}
-		console.log(setting);
-	})
-		$('#rainbow').click(function(){
-		if (setting === 3) {
-			setting = 0;
-		} else {
-			setting = 3;
-		}
-		console.log(setting);
-	})
-		$('#epilepsy').click(function(){
-		if (setting === 4) {
-			setting = 0;
-		} else {
-			setting = 4;
-		}
-		console.log(setting);
-	})
-		$('#emo').click(function(){
-		if (setting === 5) {
-			setting = 0;
-		} else {
-			setting = 5;
-		}
-		console.log(setting);
-	})
-	$('#clear').click(function(){
-		$('.grid, .grid2').removeClass('etch');
-		$('.grid, .grid2').css('opacity', 1);
-		$('.grid, .grid2').css('background-color', 'pink');
-	})
-	$('.grid, .grid2').mouseenter(function() {
+	var sketch = function() {
+	$('.grid').mouseenter(function() {
 		if (setting === 1 && hue === 1) {
 			$(this).css('background-color', 'red');
 		}
@@ -107,49 +48,118 @@ $(document).ready(function(){
 			$(this).css('opacity', currentOpacity - 0.2);
 		}
 	})
-	$('.grid, .grid2').mouseleave(function(){
+	$('.grid').mouseleave(function(){
 		if (setting === 2) {
 			$(this).fadeTo('slow', 1);
 		}
 	})
-	$('#size1').click(function(){
-		size = 1;
-		$('.grid').remove();
-		console.log(size);
-		console.log(hue);
-		console.log(setting); //can i do this with a for loop? was thinking size[i] but would i need an array? cuz size is a string and i would be a number
-		while (j <= 16) {
-			$('#smallWrapper').append("<div class = 'grid2'> </div>");
-			j++;
+}
+	while (i <= 625) {
+		$('#smallWrapper').append("<div class = 'grid'> </div>");
+		i++;
+	}
+	sketch();
+	$('.buttons').click(function(){
+		if ($(this).hasClass('highlight')) {
+    		$(this).removeClass('highlight');
+    	} 
+    	else {
+    		$('.highlight').removeClass('highlight');
+	    	$(this).addClass('highlight');
 		}
 	})
+	$('#norm').click(function(){
+		if (setting === 1) {
+			setting = 0;
+		} else {
+			setting = 1;
+		}
+	})
+		$('#fade').click(function(){
+		if (setting === 2) {
+			setting = 0;
+		} else {
+			setting = 2;
+		}
+	})
+		$('#rainbow').click(function(){
+		if (setting === 3) {
+			setting = 0;
+		} else {
+			setting = 3;
+		}
+	})
+		$('#epilepsy').click(function(){
+		if (setting === 4) {
+			setting = 0;
+		} else {
+			setting = 4;
+		}
+	})
+		$('#emo').click(function(){
+		if (setting === 5) {
+			setting = 0;
+		} else {
+			setting = 5;
+		}
+	})
+	$('#clear').click(function(){
+		$('.grid').removeClass('etch');
+		$('.grid').css('opacity', 1);
+		$('.grid').css('background-color', 'pink');
+	})
+	$('#size1').click(function(){
+		$('#choice').replaceWith('<div id = "choice"> 5 x 5 </div>')
+		i = 1;
+		$('.grid').remove();
+		while (i <= 25) {
+			$('#smallWrapper').append("<div class = 'grid'> </div>");
+			$('.grid').css('height', 125);
+			$('.grid').css('width', 125);
+			$('#smallWrapper').css('height', 625)
+			i++;
+		}
+		sketch();
+	})
 	$('#size2').click(function(){
-		size = 2;
-		console.log(size);
-		$('#choice').replaceWith('<div id = "choice"> 16 x 16 </div>')
+		i = 1;
+		$('#choice').replaceWith('<div id = "choice"> 10 x 10 </div>')
+		$('.grid').remove();
+		while (i <= 100) {
+			$('#smallWrapper').append("<div class = 'grid'> </div>");
+			$('.grid').css('height', (62.5));
+			$('.grid').css('width', (62.5));
+			$('#smallWrapper').css('height', 630)
+			i++;
+		}
+		sketch();
 	})
 	$('#size3').click(function(){
-		size = 3;
-		console.log(size);
+		i = 1;
 		$('#choice').replaceWith('<div id = "choice"> 25 x 25 </div>')
+		$('.grid').remove();
+		while (i <= 625) {
+			$('#smallWrapper').append("<div class = 'grid'> </div>");
+			$('.grid').css('height', (25));
+			$('.grid').css('width', (25));
+			$('#smallWrapper').css('height', 625)
+			i++;
+		}
+		sketch();
 	})
 	$('#red').click(function(){
 		hue = 1;
 		$('#choice2').replaceWith('<div id = "choice2"> Red </div>')
-		console.log(hue); //can i do this with a for loop? was thinking size[i] but would i need an array? cuz size is a string and i would be a number
 	})
 	$('#purple').click(function(){
 		hue = 2;
-		console.log(hue);
 		$('#choice2').replaceWith('<div id = "choice2"> Purple </div>')
 	})
 	$('#blue').click(function(){
 		hue = 3;
-		console.log(hue);
 		$('#choice2').replaceWith('<div id = "choice2"> Blue </div>')
 	})
 });
-
 
 
 
