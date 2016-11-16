@@ -62,57 +62,42 @@ $(document).ready(function(){
 		i++;
 	}
 	sketch();
+	var size = function(n) {
+			i = 1;
+			askSize = n;
+			$('.grid').remove();
+			$('#smallWrapper').css('height', 'auto');
+			while (i <= askSize * askSize) {
+				$('#smallWrapper').append("<div class = 'grid'> </div>");
+				$('.grid').css('height', (625 / askSize));
+				$('.grid').css('width', (625 / askSize));
+
+				i++;
+			}
+			sketch();
+	}
 	$('#size1').click(function(){
 		$('#choice').replaceWith('<div id = "choice"> 5 x 5 </div>')
-		i = 1;
-		$('.grid').remove();
-		while (i <= 25) {
-			$('#smallWrapper').append("<div class = 'grid'> </div>");
-			$('.grid').css('height', 125);
-			$('.grid').css('width', 125);
-			$('#smallWrapper').css('height', 625)
-			i++;
-		}
-		sketch();
+		size(5);
 	})
 	$('#size2').click(function(){
-		i = 1;
 		$('#choice').replaceWith('<div id = "choice"> 10 x 10 </div>')
-		$('.grid').remove();
-		while (i <= 100) {
-			$('#smallWrapper').append("<div class = 'grid'> </div>");
-			$('.grid').css('height', (62.5));
-			$('.grid').css('width', (62.5));
-			$('#smallWrapper').css('height', 630)
-			i++;
-		}
-		sketch();
+		size(10);
 	})
 	$('#size3').click(function(){
-		i = 1;
 		$('#choice').replaceWith('<div id = "choice"> 25 x 25 </div>')
-		$('.grid').remove();
-		while (i <= 625) {
-			$('#smallWrapper').append("<div class = 'grid'> </div>");
-			$('.grid').css('height', (25));
-			$('.grid').css('width', (25));
-			$('#smallWrapper').css('height', 625)
-			i++;
-		}
-		sketch();
+		size(25);
 	})
 	$('#customSize').click(function(){
 		i = 1;
-		askSize = prompt("How many squares per side? 1 - 100");
-		$('#choice').replaceWith('<div id = "choice"> Custom </div>')
-		$('.grid').remove(); 
-		while (i <= askSize * askSize) {
-			$('#smallWrapper').append("<div class = 'grid'> </div>");
-			$('.grid').css('height', (625 / askSize));
-			$('.grid').css('width', (625 / askSize));
-			i++;
+		$('#choice').replaceWith('<div id = "choice"> Custom </div>');
+		askSize = prompt("How many squares per side? 1 - 40");
+		if (askSize === null) {
+			return;
 		}
-		sketch();
+		else if (askSize !== null) {
+			size(askSize);
+		}
 	})
 	$('#red').click(function(){
 		hue = 1;
